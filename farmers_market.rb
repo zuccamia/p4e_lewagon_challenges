@@ -12,6 +12,7 @@ items = {
   cart = Hash.new()
   totalPrice = 0
   item = 0
+  quantity = 0
   
   # display items: price
   puts "Today we have:"
@@ -19,9 +20,9 @@ items = {
     puts "#{key.capitalize} at #{value} yen per piece."
   end
   
-  while item != 'none' do
+  while item != "none" do
       puts "What would you like to buy today?" 
-      item = gets.chomp    
+      item = gets.chomp
       if items.find {|i, p| item == i.to_s}
           puts "How many would you like to buy?"
           quantity = gets.chomp.to_i
@@ -33,14 +34,14 @@ items = {
           price = items.select{|i, p| item == i.to_s} .to_a[0][1]
   
           #calculate total price
-          totalPrice = totalPrice + (quantity.to_i * price)
+          totalPrice = totalPrice + (newQuantity.to_i * price)
       
           # display the item(s) and total price
           puts "Your cart contains:"
           cart.each do |key, value|
             puts "#{value} piece(s) of #{key}."
           end
-          puts "Total price is: #{totalPrice}"
+          puts "Total price is: #{totalPrice} yen."
         else 
         puts "Input error."
         end
