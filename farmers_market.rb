@@ -34,7 +34,7 @@ items = {
           price = items.select{|i, p| item == i.to_s} .to_a[0][1]
   
           #calculate total price
-          totalPrice = totalPrice + (newQuantity.to_i * price)
+          totalPrice = totalPrice + (quantity.to_i * price)
       
           # display the item(s) and total price
           puts "Your cart contains:"
